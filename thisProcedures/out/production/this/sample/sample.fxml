@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane alignment="CENTER" hgap="10.0" prefHeight="965.0" prefWidth="1000.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.LayoutController">
+  <children>
+    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <children>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <Label text="Nr prg." />
+            <TextField fx:id="nrPrograms" alignment="BASELINE_RIGHT" disable="true" opacity="1.0" prefHeight="20.0" prefWidth="107.0" />
+          </children>
+        </HBox>
+        <ListView fx:id="listPrograms" prefHeight="259.0" prefWidth="282.0" />
+      </children>
+    </VBox>
+    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+      <children>
+        <Label alignment="TOP_CENTER" prefWidth="207.0" text="ExeStack" />
+        <ListView fx:id="listExeStack" prefHeight="259.0" prefWidth="208.0" />
+      </children>
+    </VBox>
+    <VBox prefHeight="127.0" prefWidth="258.0000999999975" GridPane.columnIndex="5" GridPane.rowIndex="1">
+      <children>
+        <Label alignment="TOP_CENTER" prefWidth="258.0" text="SymbolTable" />
+        <TableView fx:id="tableSymbolTable" prefHeight="259.0" prefWidth="274.0">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="118.0" text="Var" fx:id="symbolTableVarColumn" />
+            <TableColumn maxWidth="500.0" minWidth="10.0" prefWidth="204.0" text="Value" fx:id="symbolTableValueColumn" />
+          </columns>
+        </TableView>
+      </children>
+    </VBox>
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="45.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
+      <children>
+        <Button fx:id="loadProgramButton" mnemonicParsing="false" onAction="#startProgramsWindow" prefHeight="45.0" text="Load Program" />
+        <Button fx:id="oneStepButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#runOneStep" prefHeight="45.0" text="OneStep" />
+      </children>
+    </HBox>
+    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <children>
+        <Label alignment="CENTER" prefWidth="207.0" text="OutputList" />
+        <ListView fx:id="listOutput" prefHeight="274.0" prefWidth="208.0" />
+      </children>
+    </VBox>
+    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+      <children>
+        <Label alignment="CENTER" prefWidth="258.0" text="FileTable" />
+        <TableView fx:id="tableFileTable" prefHeight="267.0" prefWidth="274.0">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="80.0" text="Id" fx:id="fileTableIdColumn" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="242.0" text="FileName" fx:id="fileTableFileNameColumn" />
+          </columns>
+        </TableView>
+      </children>
+    </VBox>
+    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+      <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="266.0" text="Heap" />
+        <TableView fx:id="tableHeap" prefHeight="267.0" prefWidth="282.0">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="132.0" text="Adress" fx:id="heapAdressColumn" />
+            <TableColumn maxWidth="500.0" minWidth="10.0" prefWidth="179.0" text="Value" fx:id="heapValueColumn" />
+          </columns>
+        </TableView>
+      </children>
+    </VBox>
+    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+      <children>
+        <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefWidth="389.0" text="ProcTable" />
+        <TableView fx:id="tableProcTable" prefHeight="200.0" prefWidth="200.0">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="192.0" text="Name &amp; Parameter" fx:id="procTableFirstColumn" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="200.0" text="Body" fx:id="procTableSecondColumn" />
+          </columns>
+        </TableView>
+      </children>
+    </VBox>
+  </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="258.0" minWidth="10.0" prefWidth="16.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="370.0" minWidth="10.0" prefWidth="176.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="5.0" prefWidth="19.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.0" minWidth="10.0" prefWidth="389.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.0" minWidth="9.0" prefWidth="16.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="323.0" minWidth="10.0" prefWidth="300.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="24.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="118.0" minHeight="8.0" prefHeight="31.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="290.0" minHeight="0.0" prefHeight="278.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="146.0" minHeight="6.0" prefHeight="35.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="304.0" minHeight="10.0" prefHeight="286.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="211.0" minHeight="0.0" prefHeight="37.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="257.0" minHeight="10.0" prefHeight="208.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="285.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+</GridPane>

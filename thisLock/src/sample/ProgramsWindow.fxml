@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="575.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.ProgramsWindowController">
+  <children>
+    <VBox layoutX="14.0" layoutY="14.0" prefHeight="547.0" prefWidth="772.0">
+      <children>
+        <Label alignment="CENTER" prefHeight="32.0" prefWidth="772.0" text="ProgramsList" />
+        <ListView fx:id="listProgramsList" prefHeight="462.0" prefWidth="772.0" />
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <Button id="select" fx:id="selectProgramButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="129.0" text="Select Program" />
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</Pane>
